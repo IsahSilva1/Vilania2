@@ -3,438 +3,280 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#100713">
-<title>ARQUIVO 0310 — VILANIA</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#100511">
+<title>VILANIA — O reino pertence aos vilões</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=UnifrakturMaguntia&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --black: #100713;
-  --deep: #190b20;
-  --purple: #53266b;
-  --violet: #a56bc1;
-  --gold: #c7a45d;
-  --pale-gold: #ecd7a1;
-  --text: #e8dce9;
-  --muted: #aa97ad;
-  --red: #6f182c;
+:root{
+ --black:#09030b;--purple:#681080;--violet:#bd38ec;
+ --gold:#d7b66c;--pale:#f5e5b9;--pink:#e04bff;
+ --text:#f3e9f2;
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  min-height: 100vh;
-  background:
-    radial-gradient(ellipse at 50% 0%, #45204e 0%, transparent 48%),
-    radial-gradient(ellipse at 0% 55%, #27102f 0%, transparent 45%),
-    var(--black);
-  color: var(--text);
-  font-family: "Cormorant Garamond", serif;
-  font-size: 19px;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;background:var(--black);color:var(--text);
+ font-family:"Cormorant Garamond",serif;font-size:19px;
+ overflow-x:hidden;
 }
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 10;
-  opacity: .17;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.24'/%3E%3C/svg%3E");
+body:before{
+ content:"";position:fixed;inset:0;pointer-events:none;z-index:10;
+ background:repeating-linear-gradient(0deg,transparent 0 3px,#0003 4px);
+ opacity:.25;
 }
-* { -webkit-tap-highlight-color: transparent; }
-main {
-  width: min(680px, 100%);
-  margin: auto;
-  padding: 22px 20px 50px;
-  position: relative;
+body:after{
+ content:"";position:fixed;inset:auto -20% -100px;height:300px;
+ background:radial-gradient(ellipse,#8e16b977,transparent 68%);
+ filter:blur(30px);pointer-events:none;
 }
-.topline {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  color: var(--gold);
-  font: 9px "Cinzel", serif;
-  letter-spacing: 2px;
-  border-bottom: 1px solid #c7a45d55;
-  padding: 12px 0;
+main{width:min(650px,100%);margin:auto;padding:15px 15px 45px}
+.top{
+ display:flex;justify-content:space-between;align-items:center;
+ gap:8px;padding:13px 4px;border-bottom:1px solid #b88b4b77;
+ color:var(--gold);font:9px Cinzel,serif;letter-spacing:2px;
 }
-.hero {
-  min-height: 430px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 60px 5px 45px;
-  position: relative;
+.hero{
+ position:relative;isolation:isolate;overflow:hidden;text-align:center;
+ padding:25px 15px 35px;
+ background:
+ radial-gradient(ellipse at 50% 25%,#a42cbb55,transparent 48%),
+ linear-gradient(180deg,#19091d,#0a030c 75%);
+ border:1px solid #b88b4b88;
+ margin-top:12px;
 }
-.eyebrow {
-  color: var(--gold);
-  font: 10px "Cinzel", serif;
-  letter-spacing: 4px;
-  text-transform: uppercase;
+.hero:before{
+ content:"";position:absolute;z-index:-1;
+ width:205px;height:205px;border-radius:50%;
+ top:35px;left:calc(50% - 102px);
+ background:radial-gradient(circle at 35% 30%,#ffb3a0,#d94e65 43%,#6e102c 75%,#250817);
+ box-shadow:0 0 45px #dd347755,0 0 100px #8d1bb244;
+ opacity:.8;
 }
-.ornament {
-  color: var(--gold);
-  letter-spacing: 8px;
-  margin: 18px 0;
-  font-size: 16px;
+.castle{
+ position:absolute;z-index:-1;top:72px;left:0;right:0;height:210px;
+ opacity:.72;
+ background:
+ linear-gradient(180deg,transparent,#0a030c 92%),
+ repeating-linear-gradient(90deg,transparent 0 9%,#0b0610 9.5% 11%,transparent 11.5% 15%);
+ clip-path:polygon(0 70%,9% 70%,9% 45%,13% 45%,13% 28%,16% 28%,16% 51%,22% 51%,22% 38%,27% 38%,27% 60%,34% 60%,34% 32%,38% 32%,38% 18%,41% 18%,41% 47%,47% 47%,47% 57%,52% 57%,52% 33%,56% 33%,56% 15%,60% 15%,60% 43%,66% 43%,66% 58%,73% 58%,73% 38%,78% 38%,78% 23%,81% 23%,81% 49%,88% 49%,88% 35%,92% 35%,92% 66%,100% 66%,100% 100%,0 100%);
 }
-h1, h2, h3 {
-  font-family: "Cinzel", serif;
-  font-weight: 500;
-  text-transform: uppercase;
+.crest{font:10px Cinzel,serif;letter-spacing:5px;color:var(--gold);margin-top:5px}
+.logo{
+ font:clamp(43px,11vw,75px) Cinzel,serif;font-weight:900;
+ line-height:1;margin:135px -8px 5px;
+ letter-spacing:-2px;
+ color:#f6d7fa;
+ background:linear-gradient(180deg,#fff2d3 3%,#eac0ff 30%,#b64be8 52%,#f1c4ff 66%,#a35cbd 90%);
+ background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+ filter:drop-shadow(0 3px 0 #6c2d70) drop-shadow(0 0 18px #ce42ff66);
 }
-.hero h1 {
-  font-size: clamp(43px, 11vw, 76px);
-  line-height: 1.05;
-  letter-spacing: 3px;
-  color: var(--pale-gold);
-  margin: 27px 0 14px;
-  text-shadow: 0 0 30px #a56bc133;
+.crown{color:var(--gold);font-size:29px;text-shadow:0 0 15px #d9a0ff88}
+.tagline{font:clamp(10px,2.8vw,14px) Cinzel,serif;letter-spacing:1.5px;color:var(--pale);line-height:1.8}
+.tagline strong{color:var(--pink)}
+.orn{
+ color:var(--gold);letter-spacing:7px;font-size:15px;margin:19px 0;
+ text-shadow:0 0 12px #bd38ec77;
 }
-.hero .sub {
-  font-style: italic;
-  color: #d2b8d8;
-  font-size: 23px;
-  margin: 0;
+.hero-intro{font-size:20px;font-style:italic;color:#e3cde8;line-height:1.5}
+.section-label{
+ font:10px Cinzel,serif;letter-spacing:3px;color:var(--gold);
+ text-align:center;
 }
-.intro {
-  max-width: 420px;
-  margin: 23px auto 0;
-  line-height: 1.7;
-  color: var(--muted);
-  font-size: 19px;
+.card{
+ position:relative;text-align:center;margin:30px 3px;padding:29px 21px;
+ background:
+ radial-gradient(ellipse at 50% 0%,#6b267b55,transparent 60%),
+ linear-gradient(135deg,#1b0b20,#0d0610 80%);
+ border:1px solid #c5a05b;
+ box-shadow:0 0 0 4px #110712,0 0 0 5px #7b562c,0 12px 35px #0008;
 }
-.divider {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  color: var(--gold);
-  font-size: 13px;
-  margin: 23px 0;
+.card:before,.card:after{
+ content:"✦";position:absolute;color:var(--gold);font-size:17px;
 }
-.divider::before, .divider::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #c7a45d99);
+.card:before{top:8px;left:10px}
+.card:after{bottom:8px;right:10px}
+h2{
+ font:clamp(25px,7vw,37px) Cinzel,serif;
+ font-weight:600;color:var(--pale);line-height:1.25;margin:19px 0 13px;
+ text-shadow:0 0 18px #b331cf33;
 }
-.divider::after { transform: scaleX(-1); }
-.card {
-  position: relative;
-  margin: 34px 0;
-  padding: 32px 23px;
-  text-align: center;
-  background:
-    linear-gradient(145deg, #24132cdd, #100713f5);
-  border: 1px solid #c7a45d66;
-  outline: 1px solid #c7a45d20;
-  outline-offset: 5px;
-  box-shadow: 0 15px 50px #0005;
+p{line-height:1.65;margin:13px 0;color:#e0d1e3}
+.clue{font-size:25px;font-style:italic;color:#df9eff}
+input{
+ display:block;width:100%;padding:15px 12px;margin:18px 0 12px;
+ border:1px solid var(--gold);border-radius:0;
+ background:#09030b;color:#f4dca4;
+ text-align:center;font:13px Cinzel,serif;letter-spacing:2px;
 }
-.card::before, .card::after {
-  content: "✧";
-  position: absolute;
-  color: var(--gold);
-  font-size: 19px;
+input::placeholder{color:#8c708f}
+input:focus{outline:1px solid var(--pink);box-shadow:0 0 18px #a22bc944}
+button{
+ width:100%;padding:15px 10px;cursor:pointer;
+ border:1px solid var(--gold);
+ color:#fff0c7;background:linear-gradient(100deg,#381043,#77238d,#381043);
+ font:11px Cinzel,serif;letter-spacing:2px;
+ box-shadow:inset 0 0 15px #d958ff22;
 }
-.card::before { top: 7px; left: 10px; }
-.card::after { bottom: 7px; right: 10px; }
-.label {
-  color: var(--gold);
-  font: 10px "Cinzel", serif;
-  letter-spacing: 3px;
+button:hover{background:linear-gradient(100deg,#592069,#a532c3,#592069)}
+.error{min-height:20px;color:#ff8eae;font-size:16px;font-style:italic}
+.hidden{display:none!important}
+.final{
+ border-color:var(--gold);
+ background:
+ radial-gradient(ellipse at 50% 10%,#8e1c9b66,transparent 65%),
+ #0b040d;
 }
-.card h2 {
-  color: var(--pale-gold);
-  font-size: clamp(26px, 7vw, 36px);
-  margin: 22px 0 13px;
+.poster{
+ padding:28px 15px;margin-top:22px;position:relative;
+ border:2px solid var(--gold);
+ outline:1px solid #a66b2b;outline-offset:-8px;
+ background:
+ radial-gradient(ellipse at 50% 0%,#72218a88,transparent 65%),
+ linear-gradient(180deg,#1a081e,#09030b 85%);
 }
-.card p {
-  line-height: 1.7;
-  margin: 13px auto;
-  max-width: 470px;
+.poster .logo{margin:20px 0;font-size:clamp(37px,10vw,65px)}
+.poster .date{
+ font:clamp(38px,10vw,57px) Cinzel,serif;
+ color:#f3c5ff;text-shadow:0 0 22px #d62bff66;
+ margin:16px 0 0;
 }
-.clue {
-  font-size: 26px;
-  font-style: italic;
-  color: #d9b8e7;
+.poster .day{font:17px Cinzel,serif;letter-spacing:4px;color:var(--pink)}
+.djs{
+ font:clamp(14px,3.6vw,19px) Cinzel,serif;
+ color:var(--pink);line-height:2;
+ border:1px solid #d7b66c88;padding:10px 4px;margin:20px 0;
 }
-input {
-  width: 100%;
-  padding: 16px 12px;
-  margin: 15px 0 12px;
-  border: 1px solid #a56bc188;
-  border-bottom: 2px solid var(--gold);
-  border-radius: 0;
-  background: #0c060f;
-  color: var(--pale-gold);
-  text-align: center;
-  font: 15px "Cinzel", serif;
-  letter-spacing: 2px;
+.address{font-size:20px;color:var(--pale)}
+.dress{font:11px Cinzel,serif;letter-spacing:2px;color:var(--gold)}
+.divider{
+ display:flex;align-items:center;gap:12px;color:var(--gold);
+ font-size:12px;margin:23px 0;
 }
-input::placeholder { color: #7e6b83; }
-input:focus {
-  outline: 1px solid var(--gold);
-  box-shadow: 0 0 22px #a56bc122;
-}
-button {
-  width: 100%;
-  padding: 15px 12px;
-  background: linear-gradient(110deg, #31153d, #54256b, #31153d);
-  border: 1px solid var(--gold);
-  color: var(--pale-gold);
-  font: 11px "Cinzel", serif;
-  letter-spacing: 2px;
-  cursor: pointer;
-  transition: background .3s, box-shadow .3s;
-}
-button:hover {
-  background: #633579;
-  box-shadow: 0 0 20px #a56bc133;
-}
-.error {
-  min-height: 20px;
-  color: #d98191;
-  font-size: 16px;
-  font-style: italic;
-}
-.hidden { display: none !important; }
-.final-card {
-  border-color: var(--gold);
-  background:
-    radial-gradient(ellipse at 50% 0%, #542a604d, transparent 65%),
-    #100713;
-  padding: 35px 20px;
-}
-.final-card h2 {
-  font-size: clamp(27px, 7vw, 42px);
-  line-height: 1.3;
-  color: var(--pale-gold);
-}
-.invitation {
-  position: relative;
-  margin-top: 28px;
-  padding: 30px 15px;
-  border: 1px solid var(--gold);
-  outline: 1px solid #c7a45d44;
-  outline-offset: -7px;
-  background:
-    radial-gradient(ellipse at 50% 20%, #4a225a88, transparent 70%),
-    linear-gradient(160deg, #211027, #0c060e 75%);
-}
-.invitation::before, .invitation::after {
-  content: "❦";
-  display: block;
-  color: var(--gold);
-  font-size: 26px;
-}
-.invitation h3 {
-  color: var(--pale-gold);
-  font-size: clamp(35px, 9vw, 58px);
-  line-height: 1.1;
-  letter-spacing: 2px;
-  margin: 23px 0;
-  text-shadow: 0 0 28px #a56bc155;
-}
-.motto {
-  color: var(--violet);
-  font: 11px "Cinzel", serif;
-  letter-spacing: 2px;
-  line-height: 1.8;
-}
-.date {
-  color: var(--pale-gold);
-  font: clamp(35px, 10vw, 55px) "Cinzel", serif;
-  margin: 20px 0 0;
-}
-.djs {
-  color: #dfc6e6;
-  font: 17px "Cinzel", serif;
-  letter-spacing: 1px;
-  line-height: 2;
-  margin: 15px 0;
-}
-.address {
-  color: var(--pale-gold);
-  font-size: 22px;
-}
-.dress {
-  color: var(--gold);
-  font: 10px "Cinzel", serif;
-  letter-spacing: 2px;
-  line-height: 2;
-}
-footer {
-  text-align: center;
-  padding: 30px 0 5px;
-  color: #816c87;
-  font: 9px "Cinzel", serif;
-  letter-spacing: 2px;
-  line-height: 2.2;
-}
-@keyframes reveal {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.appear { animation: reveal .9s ease both; }
-@media (max-width: 380px) {
-  main { padding-left: 16px; padding-right: 16px; }
-  .card { padding: 28px 17px; }
-  .topline { letter-spacing: 1px; font-size: 8px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: .01ms !important;
-    scroll-behavior: auto !important;
-    transition-duration: .01ms !important;
-  }
-}
+.divider:before,.divider:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,#bd9857)}
+.divider:after{transform:scaleX(-1)}
+footer{text-align:center;padding:26px 0;color:#997ba0;font:9px Cinzel,serif;letter-spacing:2px;line-height:2.2}
+@keyframes entrance{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.appear{animation:entrance .8s ease both}
+@media(max-width:380px){main{padding:10px}.hero{padding-left:10px;padding-right:10px}.card{padding:28px 15px}.top{font-size:8px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important}}
 </style>
 </head>
 <body>
 <main>
-  <header class="topline">
-    <span>ELITE PROUD</span>
-    <span>ARQUIVO Nº 0310</span>
-  </header>
+<header class="top">
+ <span>♛ ELITE PROUD</span>
+ <span>ARQUIVO Nº 0310</span>
+</header>
 
-  <section class="hero">
-    <div class="eyebrow">Documento confidencial</div>
-    <div class="ornament">✦ ── ❦ ── ✦</div>
-    <h1>ARQUIVO<br>0310</h1>
-    <p class="sub">O segredo que não deveria ser revelado.</p>
-    <p class="intro">
-      Há convites que não chegam às mãos de qualquer pessoa.
-      Algumas portas só se abrem para quem conhece as respostas.
-    </p>
-    <div class="divider">TRÊS CHAVES · UMA VERDADE</div>
-  </section>
+<section class="hero">
+ <div class="castle"></div>
+ <div class="crest">E L I T E · P R O U D</div>
+ <div class="crown">♛</div>
+ <div class="logo">VILANIA</div>
+ <div class="tagline">O REINO PERTENCE<br>AOS <strong>VILÕES.</strong></div>
+ <div class="orn">✧ ── ❦ ── ✧</div>
+ <p class="hero-intro">Uma noite onde os heróis<br>não são bem-vindos.</p>
+ <div class="orn">✦ ✧ ✦</div>
+ <p>Um convite foi selado.<br>Três enigmas guardam sua entrada.</p>
+ <div class="section-label">VOCÊ FOI ESCOLHIDO?</div>
+</section>
 
-  <section class="card" id="stage1">
-    <div class="label">CAPÍTULO I · O PRESSÁGIO</div>
-    <h2>A noite marcada</h2>
-    <div class="ornament">☽ ✧ ☾</div>
-    <p>
-      Quando outubro chega ao fim, as sombras reclamam o que lhes pertence.
-      Recupere a data do encontro, no formato DD/MM.
-    </p>
-    <input id="a1" placeholder="DD / MM" autocomplete="off">
-    <button onclick="check(1)">Desvendar o primeiro selo</button>
-    <p class="error" id="e1"></p>
-  </section>
+<section class="card" id="stage1">
+ <div class="section-label">✦ PRIMEIRO SELO ✦</div>
+ <h2>A noite marcada</h2>
+ <div class="orn">☽ ❦ ☾</div>
+ <p>Quando outubro entrega seus últimos suspiros, a corte desperta. Descubra a data em que as portas se abrem. Formato DD/MM.</p>
+ <input id="a1" placeholder="DD / MM" autocomplete="off">
+ <button onclick="check(1)">DESVENDAR O SELO</button>
+ <p class="error" id="e1"></p>
+</section>
 
-  <section class="card hidden" id="stage2">
-    <div class="label">CAPÍTULO II · A IDENTIDADE</div>
-    <h2>Os que reinam na sombra</h2>
-    <div class="ornament">✧ ♜ ✧</div>
-    <p class="clue">“A história chama de monstros aqueles que não consegue dominar.”</p>
-    <p>
-      Os heróis não foram convidados.
-      Quem, então, reivindica o trono nesta noite?
-    </p>
-    <input id="a2" placeholder="Quem somos?" autocomplete="off">
-    <button onclick="check(2)">Romper o segundo selo</button>
-    <p class="error" id="e2"></p>
-  </section>
+<section class="card hidden" id="stage2">
+ <div class="section-label">✦ SEGUNDO SELO ✦</div>
+ <h2>A corte sombria</h2>
+ <div class="orn">♜ ❦ ♜</div>
+ <p class="clue">“A história teme aquilo que não pode controlar.”</p>
+ <p>Os heróis não foram convidados. Quem reivindica o trono nesta noite?</p>
+ <input id="a2" placeholder="QUEM REINA NA SOMBRA?" autocomplete="off">
+ <button onclick="check(2)">REVELAR A CORTE</button>
+ <p class="error" id="e2"></p>
+</section>
 
-  <section class="card hidden" id="stage3">
-    <div class="label">CAPÍTULO III · A PALAVRA PROIBIDA</div>
-    <h2>O nome do reino</h2>
-    <div class="ornament">❦ ✧ ❦</div>
-    <p>
-      O último selo guarda o nome daquele lugar onde a escuridão
-      não é temida — é venerada.
-    </p>
-    <p class="clue">V I L A _ I A</p>
-    <input id="a3" placeholder="Revele o nome" autocomplete="off">
-    <button onclick="check(3)">Abrir o arquivo</button>
-    <p class="error" id="e3"></p>
-  </section>
+<section class="card hidden" id="stage3">
+ <div class="section-label">✦ TERCEIRO SELO ✦</div>
+ <h2>O nome proibido</h2>
+ <div class="orn">❦ ✧ ❦</div>
+ <p>O último selo guarda o nome do reino onde a escuridão não é temida, mas venerada.</p>
+ <p class="clue">V I L A _ I A</p>
+ <input id="a3" placeholder="PRONUNCIE O NOME" autocomplete="off">
+ <button onclick="check(3)">ABRIR O PORTAL</button>
+ <p class="error" id="e3"></p>
+</section>
 
-  <section class="card final-card hidden" id="reveal">
-    <div class="label">ACESSO CONCEDIDO · SEGREDO REVELADO</div>
-    <div class="ornament">✦ ── ❦ ── ✦</div>
-    <h2>VOCÊS FORAM<br>CONVOCADOS</h2>
-    <p class="clue">O reino aguarda seus verdadeiros herdeiros.</p>
+<section class="card final hidden" id="reveal">
+ <div class="section-label">ACESSO CONCEDIDO</div>
+ <div class="orn">✧ ── ❦ ── ✧</div>
+ <h2>VOCÊS FORAM<br>CONVOCADOS</h2>
+ <p class="clue">O reino aguardava por vocês.</p>
+ <div class="poster">
+  <div class="section-label">ELITE PROUD APRESENTA</div>
+  <div class="crown">♛</div>
+  <div class="logo">VILANIA</div>
+  <div class="tagline">O REINO PERTENCE AOS<br><strong>VILÕES.</strong></div>
+  <div class="orn">✧ ── ❦ ── ✧</div>
+  <p>UMA NOITE ONDE OS HERÓIS<br>NÃO SÃO BEM-VINDOS.</p>
+  <div class="date">31/10</div>
+  <div class="day">SÁBADO</div>
+  <div class="divider">A CORTE MUSICAL</div>
+  <div class="djs">DJ MYRELLA DANTAS<br>DJ BACORACINI<br>DJ STEFANY ARAÚJO</div>
+  <div class="dress">VISTA SEU LADO SOMBRIO</div>
+  <div class="divider">O LOCAL DO ENCONTRO</div>
+  <p class="address"><strong>MANSÃO SÓ FARRA</strong><br>R. Cesário Galero, 395</p>
+  <div class="orn">❦ ✧ ❦</div>
+ </div>
+ <p>O convite está revelado.<br>Agora, vista seu lado sombrio.</p>
+</section>
 
-    <div class="invitation">
-      <div class="label">ELITE PROUD APRESENTA</div>
-      <h3>VILANIA</h3>
-      <p class="motto">O REINO PERTENCE AOS VILÕES</p>
-      <p><em>Uma noite onde os heróis não são bem-vindos.</em></p>
-      <div class="ornament">✦ ── ❦ ── ✦</div>
-      <div class="date">31.10</div>
-      <p class="motto">SÁBADO · HALLOWEEN</p>
-      <div class="divider">A CORTE MUSICAL</div>
-      <div class="djs">
-        MYRELLA DANTAS<br>
-        BACORACINI<br>
-        STEFANY ARAÚJO
-      </div>
-      <div class="divider">O LOCAL DO ENCONTRO</div>
-      <p class="address"><strong>MANSÃO SÓ FARRA</strong></p>
-      <p>R. Cesário Galero, 395</p>
-      <div class="ornament">❦</div>
-      <p class="dress">VISTA SEU LADO SOMBRIO</p>
-    </div>
-    <p>Guarde o convite. Algumas noites tornam-se lendas.</p>
-  </section>
-
-  <footer>
-    ELITE PROUD · VILANIA<br>
-    NEM TODAS AS SOMBRAS DEVEM SER TEMIDAS
-  </footer>
+<footer>
+ ELITE PROUD · VILANIA<br>
+ NEM TODAS AS LENDAS TERMINAM AO AMANHECER
+</footer>
 </main>
-
 <script>
-function normalize(value) {
-  return value.normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase().trim();
+function normalize(v){
+ return v.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().trim();
 }
-
-function check(n) {
-  const input = document.getElementById("a" + n);
-  const error = document.getElementById("e" + n);
-  const value = normalize(input.value);
-
-  const answers = {
-    1: ["31/10", "3110", "31.10", "31-10"],
-    2: ["vilao", "vilaos", "vilã", "vilões", "viloes"],
-    3: ["vilania"]
-  };
-
-  if (!answers[n].includes(value)) {
-    error.textContent = "O selo permanece fechado. Tente novamente.";
-    return;
-  }
-
-  error.textContent = "";
-  document.getElementById("stage" + n).classList.add("hidden");
-
-  if (n < 3) {
-    const next = document.getElementById("stage" + (n + 1));
-    next.classList.remove("hidden");
-    next.classList.add("appear");
-    next.scrollIntoView({ behavior: "smooth", block: "center" });
-    next.querySelector("input").focus({ preventScroll: true });
-  } else {
-    const reveal = document.getElementById("reveal");
-    reveal.classList.remove("hidden");
-    reveal.classList.add("appear");
-    reveal.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+function check(n){
+ const input=document.getElementById("a"+n);
+ const error=document.getElementById("e"+n);
+ const value=normalize(input.value);
+ const answers={
+  1:["31/10","3110","31.10","31-10"],
+  2:["vilao","vilaos","vilã","vilões","viloes"],
+  3:["vilania"]
+ };
+ if(!answers[n].includes(value)){
+  error.textContent="O selo permanece fechado. Tente novamente.";
+  return;
+ }
+ error.textContent="";
+ document.getElementById("stage"+n).classList.add("hidden");
+ if(n<3){
+  const next=document.getElementById("stage"+(n+1));
+  next.classList.remove("hidden");
+  next.classList.add("appear");
+  next.scrollIntoView({behavior:"smooth",block:"center"});
+ }else{
+  const reveal=document.getElementById("reveal");
+  reveal.classList.remove("hidden");
+  reveal.classList.add("appear");
+  reveal.scrollIntoView({behavior:"smooth",block:"start"});
+ }
 }
-
-document.querySelectorAll("input").forEach((input, index) => {
-  input.addEventListener("keydown", event => {
-    if (event.key === "Enter") check(index + 1);
-  });
+document.querySelectorAll("input").forEach((input,i)=>{
+ input.addEventListener("keydown",e=>{if(e.key==="Enter")check(i+1)});
 });
 </script>
 </body>
